@@ -148,7 +148,7 @@ EAL: Error - exiting with code: 1
   Cause: ports in DPDK RTE (2) != ports in hdslb.conf(1)
 ```
 
-It means the NIC used by DPVS is not matching /etc/hdslb.conf. Pls use dpdk-devbind to adjust the NIC number or modify hdslb.conf. We'll improve this part to make DPVS smarter to avoid modify config file when NIC count is not match.
+It means the NIC used by DPVS is not matching ```/etc/hdslb.conf```. Pls use ```dpdk-devbind``` to adjust the NIC number or modify ```hdslb.conf```. We'll improve this part to make DPVS smarter to avoid modify config file when NIC count is not match.
 
 ### Test Full-NAT Load Balancer
 The test topology:
@@ -157,9 +157,9 @@ The test topology:
 The setting includes:
 
 * ip-addresses and routes for DPDK LAN/WAN network.
-* VIP on WAN interface (dpdk1)
-* FNAT service (vip:vport) and related RS
-* FNAT mode needs at least one LIP on LAN interface (dpdk0)
+* VIP on WAN interface (```dpdk1```)
+* ```FNAT``` service (vip:vport) and related ```RS```
+* ```FNAT``` mode needs at least one LIP on LAN interface (```dpdk0```)
 ```
 #!/bin/sh -
 
